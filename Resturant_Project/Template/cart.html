@@ -1,0 +1,8 @@
+<h2>Your Cart</h2>
+<ul>
+    {% for item in cart.items.all %}
+        <li>{{ item.quantity }} x {{ item.item.Item_name }} - ${{ item.item.Price }}</li>
+    {% endfor %}
+</ul>
+<p>Total: ${{ cart.total_price }}</p>
+<a href="{% url 'place_order' %}">Place Order</a>

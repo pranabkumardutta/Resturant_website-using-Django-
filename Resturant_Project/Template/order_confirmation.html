@@ -1,0 +1,8 @@
+<h2>Order Confirmation</h2>
+<p>Thank you for your order! Your order ID is {{ order.id }}</p>
+<ul>
+    {% for item in order.items.all %}
+        <li>{{ item.quantity }} x {{ item.item.Item_name }} - ${{ item.item.Price }}</li>
+    {% endfor %}
+</ul>
+<p>Total: ${{ order.total_price }}</p>
